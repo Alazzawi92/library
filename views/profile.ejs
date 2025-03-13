@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>livers</title>
+  </head>
+  <body>
+    <div id="container">
+      <nav>
+        <ul>
+          <% if (user) { %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/show-profile-user/<%= user._id %>">Profile</a></li>
+          <li><a href="/add-book/<%= user._id %>">Ajouter un livre</a></li>
+          <li id="deconnecter"><a href="/logout">Déconnecter</a></li>
+
+          <% }else{ %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/login">Se Connecter</a></li>
+          <li><a href="/register">S'enregistrer</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+<h1 style="display: flex; justify-content: center;"> Bienvenue sur votre profil</h1>
+
+
+<section class="profile">
+    <h2> Vos informations personnelles</h2>
+
+    <div class="avatar">
+        <img src="<%= user.avatar || 'https://example.com/default-avatar.jpg' %>" alt="User Avatar">
+    </div>
+    <div class="info">
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <p><strong>Age:</strong> <%= user.age || 'Not specified' %></p>
+        <p><strong>Genre Preferences:</strong> <%= user.genre_preferences.length > 0 ? user.genre_preferences.join(', ') : 'Not specified' %></p>
+        <p><strong>Favorite Books:</strong> <%= user.favorite_books.length > 0 ? user.favorite_books.join(', ') : 'Not specified' %></p>
+        <p><strong>Reading History:</strong> <%= user.reading_history.length > 0 ? user.reading_history.join(', ') : 'Not specified' %></p>
+        <p><strong>Wishlist:</strong> <%= user.wishlist.length > 0 ? user.wishlist.join(', ') : 'Not specified' %></p>
+        <p><strong>Bio:</strong> <%= user.bio || 'No bio available' %></p>
+        <p><strong>Premium Member:</strong> <%= user.isPremiumMember ? 'Yes' : 'No' %></p>
+    </div>
+    <a id="btnUpdate" href="/update-User/<%= user.id %>">Update profile</a>
+    <a id="btnDelete" href="/delete-User/<%= user.id %>">Delete mon profile</a>
+</section>
+
+
+<%- include('partials/footer') %>

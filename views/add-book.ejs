@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>livers</title>
+  </head>
+  <body>
+    <div id="container">
+      <nav>
+        <ul>
+          <% if (user) { %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/show-profile-user/<%= user._id %>">Profile</a></li>
+          <li><a href="/add-book/<%= user._id %>">Ajouter un livre</a></li>
+          <li id="deconnecter"><a href="/logout">Déconnecter</a></li>
+
+          <% }else{ %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/login">Se Connecter</a></li>
+          <li><a href="/register">S'enregistrer</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+<main id="add-book">
+  <h1>Ajouter un livre<%= user.last %></h1>
+  <form
+    action="/add-book/<%= user.id %>"
+    method="POST"
+    enctype="multipart/form-data"
+    id="add-book-form"
+  >
+    <h2>Informations du livre</h2>
+    <input
+      type="text"
+      id="user_id"
+      name="idUser"
+      value="<%= user._id %>"
+      hidden
+    />
+    <input
+      type="text"
+      id="first"
+      name="first"
+      value="<%= user.first %>"
+      hidden
+    />
+    <input type="text" id="last" name="last" value="<%= user.last %>" hidden />
+    <div>
+      <label for="cover">Couverture (URL):</label>
+      <input type="url" id="cover" name="cover" required />
+    </div>
+    <div>
+      <label for="title">Titre:</label>
+      <input type="text" id="title" name="title" required />
+    </div>
+    <div>
+      <label for="author">Auteur:</label>
+      <input type="text" id="author" name="author" required />
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+    </div>
+    <div>
+      <label for="publication_date">Date de publication:</label>
+      <input
+        type="date"
+        id="publication_date"
+        name="publication_date"
+        required
+      />
+    </div>
+    <div>
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" name="genre" required />
+    </div>
+    <div>
+      <label for="ISBN">ISBN:</label>
+      <input type="text" id="ISBN" name="ISBN" required />
+    </div>
+    <div>
+      <label for="pages">Pages:</label>
+      <input type="number" id="pages" name="pages" required />
+    </div>
+    <div>
+      <label for="language">Langue:</label>
+      <input type="text" id="language" name="language" required />
+    </div>
+    <div>
+      <label for="publisher">Éditeur:</label>
+      <input type="text" id="publisher" name="publisher" required />
+    </div>
+    <div>
+      <label for="format">Format:</label>
+      <input type="text" id="format" name="format" required />
+    </div>
+    <div>
+      <label for="dimensions">Dimensions:</label>
+      <input type="text" id="dimensions" name="dimensions" required />
+    </div>
+    <div>
+      <label for="rating">Évaluation:</label>
+      <input type="number" step="0.1" id="rating" name="rating" required />
+    </div>
+    <div>
+      <button type="submit">Ajouter</button>
+    </div>
+  </form>
+</main>
+<%- include('partials/footer') %>

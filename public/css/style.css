@@ -1,0 +1,303 @@
+/* Styles généraux */
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fcf9f9;
+  height: 100vh;
+}
+
+/* Conteneur principal */
+#container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* En-tête */
+header,
+footer {
+  background: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Navigation */
+nav {
+  background: #444;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li,
+footer ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a,
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+footer a:hover {
+  background: #555;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #container {
+    width: 95%;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Styles pour les cartes de livres */
+.book-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.book-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.book-card h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.book-card p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.book-card .rating {
+  font-size: 18px;
+  color: #f39c12;
+}
+
+/* Conteneur de la page de connexion */
+.login-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 240px auto;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-container input[type="submit"] {
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container input[type="submit"]:hover {
+  background-color: #555;
+}
+
+.login-container .error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+/* Conteneur de la page d'inscription */
+#Signup {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+#Signup h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#Signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#Signup label {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+#Signup input[type="text"],
+#Signup input[type="email"],
+#Signup input[type="password"],
+#Signup input[type="url"],
+#Signup input[type="number"],
+#Signup textarea {
+  font-size: 16px;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#Signup input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#Signup .checkbox-container {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+#Signup button[type="submit"] {
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+#Signup button[type="submit"]:hover {
+  background-color: #555;
+}
+
+#Signup h3 {
+  font-size: 20px;
+  margin: 20px 0 10px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#add-book {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+flex-direction: column;
+  max-width: 600px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Style pour le formulaire */
+#add-book-form {
+width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="url"],
+form input[type="date"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #575757;
+}

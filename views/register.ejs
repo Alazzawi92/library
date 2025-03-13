@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>livers</title>
+  </head>
+  <body>
+    <div id="container">
+      <nav>
+        <ul>
+          <% if (user) { %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/show-profile-user/<%= user._id %>">Profile</a></li>
+          <li><a href="/add-book/<%= user._id %>">Ajouter un livre</a></li>
+          <li id="deconnecter"><a href="/logout">Déconnecter</a></li>
+
+          <% }else{ %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/login">Se Connecter</a></li>
+          <li><a href="/register">S'enregistrer</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+<h1 style="display: flex; justify-content: center;">Bienvenue dans le page Register</h1>
+
+<div id="Signup">
+  <h2>Créer un compte</h2>
+  <form id="userForm" method="post" action="/register">
+    <!-- Prénom & Nom -->
+    <label for="last">Nom :</label>
+    <input type="text" id="last" name="last" required />
+    <label for="first">Prénom :</label>
+    <input type="text" id="first" name="first" required />
+
+    <!-- Email -->
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required />
+    <!-- password -->
+    <label for="password">password</label>
+    <input type="password" id="password" name="password" required />
+    <!-- Avatar -->
+    <label for="avatar">Lien Avatar :</label>
+    <input
+      type="url"
+      id="avatar"
+      name="avatar"
+      placeholder="https://example.com/image.jpg"
+    />
+
+    <!-- Âge -->
+    <label for="age">Âge :</label>
+    <input type="number" id="age" name="age" min="0" />
+
+    <!-- Genres préférés -->
+    <label for="genre_preferences">Genres préférés :</label>
+    <input
+      type="text"
+      id="genre_preferences"
+      name="genre_preferences"
+      placeholder="Ex: Science-fiction, Romance"
+    />
+
+    <!-- Livres favoris -->
+    <label for="favorite_books">Livres favoris :</label>
+    <input
+      type="text"
+      id="favorite_books"
+      name="favorite_books"
+      placeholder="Ex: Harry Potter, Le Seigneur des Anneaux"
+    />
+
+    <!-- Historique de lecture -->
+    <label for="reading_history">Historique de lecture :</label>
+    <input type="text" id="reading_history" name="reading_history" />
+
+    <!-- Liste de souhaits -->
+    <label for="wishlist">Liste de souhaits :</label>
+    <input type="text" id="wishlist" name="wishlist" />
+
+    <!-- Bio -->
+    <label for="bio">Bio :</label>
+    <textarea id="bio" name="bio" rows="3" maxlength="500"></textarea>
+
+    <!-- Abonnement Premium -->
+    <div class="checkbox-container">
+      <input type="checkbox" id="isPremiumMember" name="isPremiumMember" />
+      <label for="isPremiumMember">Abonné Premium</label>
+    </div>
+
+    <!-- Adresse -->
+    <h3>Adresse</h3>
+    <label for="street">Rue :</label>
+    <input type="text" id="street" name="street" />
+
+    <label for="city">Ville :</label>
+    <input type="text" id="city" name="city" />
+
+    <label for="zip">Code Postal :</label>
+    <input type="text" id="zip" name="zip" />
+
+    <label for="country">Pays :</label>
+    <input type="text" id="country" name="country" />
+
+    <!-- Bouton de soumission -->
+    <button type="submit">S'inscrire</button>
+  </form>
+</div>
+
+<%- include('partials/footer') %>
